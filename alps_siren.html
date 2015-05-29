@@ -746,6 +746,17 @@ asciidoc.install(2);
 <div class="sect1">
 <h2 id="_summary">Summary</h2>
 <div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph"><p>This is still a work in progress.  To file issues, please visit the GitHub
+repository:  <a href="https://github.com/kevinswiber/siren-alps-mapping">https://github.com/kevinswiber/siren-alps-mapping</a></p></div>
+</td>
+</tr></table>
+</div>
 <div class="paragraph"><p>This document provides guidance on mapping ALPS descriptions to Siren
 representations.  It is provided as a guide for those writing servers that will
 use ALPS provides to generate Siren and for those writing client applications
@@ -763,7 +774,13 @@ be useful to both client and server implementors and can be used at both
 run-time and design-time to handle the generation and interpretation of
 response representations. ALPS description documents are referred to as
 <em>profiles</em> or <em>profile documents</em>.</p></div>
-<div class="paragraph"><p>Since the aim is to support a wide set of use cases (clients, servers, run-time, design-time, etc.), ALPS profiles do not describe the runtime <em>behavior</em> of any single system. Instead ALPS profiles describe the problem domain boundaries (e.g. the possible data elements and possible state transitions). It is up to implementors to decide how they wish to use ALPS profliesin order to create an actual instance of a service or client application.</p></div>
+<div class="paragraph"><p>Since the aim is to support a wide set of use cases (clients, servers,
+run-time, design-time, etc.), ALPS profiles do not describe the runtime
+<em>behavior</em> of any single system. Instead ALPS profiles describe the problem
+domain boundaries (e.g. the possible data elements and possible state
+transitions). It is up to implementors to decide how they wish to use ALPS
+profiles in order to create an actual instance of a service or client
+application.</p></div>
 <div class="sect2">
 <h3 id="_servers_and_clients">Servers and Clients</h3>
 <div class="paragraph"><p>For server implementors, ALPS profiles establish the list of possible
@@ -784,14 +801,17 @@ elements and state transitions emitted by that service.</p></div>
 <div class="sect1">
 <h2 id="_advertising_alps_profiles_for_siren_representations">Advertising ALPS Profiles for Siren Representations</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Servers returning Siren responses can advertise the ALPS profiles they support using the following methods:</p></div>
+<div class="paragraph"><p>Servers returning Siren responses can advertise the ALPS profiles they support
+using the following methods:</p></div>
 <div class="dlist"><dl>
 <dt class="hdlist1">
 Link Header
 </dt>
 <dd>
 <p>
-  Responses can include the <code>Link</code> header<a href="#1">[1]</a> with the <code>href</code> value set to the URL of the ALPS profile document and the <code>rel</code> value set to "profile."<br>
+  Responses can include the <code>Link</code> header<a href="#1">[1]</a> with the <code>href</code> value set to
+  the URL of the ALPS profile document and the <code>rel</code> value set to "profile."
+  <br>
   <code>Link: <a href="http://alps.io/profiles/microblogging">http://alps.io/profiles/microblogging</a>; rel="profile"</code>
 </p>
 </dd>
@@ -800,7 +820,9 @@ Siren <code>link</code> item
 </dt>
 <dd>
 <p>
-  Siren representations can use an item in the <code>links</code> array<a href="#2">[2]</a> with the <code>href</code> value set to the URL of the ALPS profile document and the <code>rel</code> value set to "profile."<br>
+  Siren representations can use an item in the <code>links</code> array<a href="#2">[2]</a> with the
+  <code>href</code> value set to the URL of the ALPS profile document and the <code>rel</code> value
+  set to "profile."<br>
   <code>{ "rel": ["profile"], "href": "http://alps.io/profiles/microblogging" }</code>
 </p>
 </dd>
@@ -856,9 +878,9 @@ sub-entity, or the <em>name</em> of an action <em>field</em>.</p></div>
 <div class="paragraph"><p><em>TK: How does one distinguish between what is a property and what is a class?</em></p></div>
 <div class="paragraph"><p>When the ALPS <code>descriptor.type</code> value is <em>safe</em>, <em>idempotent</em>, or <em>unsafe</em>, the
 <code>descriptor.name</code> value maps to either a Siren <em>action</em> name or an item in the
-<em>rel</em> value array for a <em>link</em> or <em>sub-entity</em>.  If no match is found, an attempt
-should be made to map the <code>descriptor.name</code> value to the <em>title</em> value of an
-<em>action</em>, <em>link</em> or <em>sub-entity</em>.</p></div>
+<em>rel</em> value array for a <em>link</em> or <em>sub-entity</em>.  If no match is found, an
+attempt should be made to map the <code>descriptor.name</code> value to the <em>title</em> value
+of an <em>action</em>, <em>link</em> or <em>sub-entity</em>.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_mapping_http_methods_to_alps_code_descriptor_type_code_values">Mapping HTTP methods to ALPS <code>descriptor.type</code> values</h3>
@@ -1105,7 +1127,7 @@ server’s use cases.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-05-28 22:09:18 EDT
+Last updated 2015-05-28 22:20:52 EDT
 </div>
 </div>
 </body>

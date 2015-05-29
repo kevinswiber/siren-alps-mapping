@@ -13,12 +13,12 @@ repository:  https://github.com/kevinswiber/siren-alps-mapping
 
 This document provides guidance on mapping ALPS descriptions to Siren
 representations.  It is provided as a guide for those writing servers that will
-use ALPS provides to generate Siren and for those writing client applications
+use ALPS profiles to generate Siren and for those writing client applications
 that will use ALPS profiles to "recognize" ALPS descriptors within the Siren
 representation.
 
 == A Review of ALPS Principles
-The Application-Level Profile Semantic(ALPS)<<0,[0]>> specification is designed
+The Application-Level Profile Semantic (ALPS)<<0,[0]>> specification is designed
 to describe the data elements and state transitions that make up a 'problem
 domain' (e.g. microblogging, accounting, etc.). ALPS documents are designed to
 be useful to both client and server implementors and can be used at both
@@ -86,14 +86,14 @@ valid Siren representations.
 === The ALPS +descriptor.id+ property
 ==== Server implementations
 When mapping Siren representations to ALPS, the +descriptor.id+ value MUST be
-unique for each ALPS document.  It is RECOMMENDED to avoid using link
+unique for each ALPS document. It is RECOMMENDED to avoid using link
 relation values as +descriptor.id+ values, as link relations may occur multiple
 times within a single Siren representation.
 
 ==== Client implementations
 When mapping ALPS to Siren representations, the +descriptor.id+ property MUST
 be used in place of a +descriptor.name+ value when a +descriptor.name+ value is
-not present.  Otherwise, the +descriptor.id+ value SHOULD be ignored.
+not present. Otherwise, the +descriptor.id+ value SHOULD be ignored.
 
 === The ALPS +descriptor.name+ property
 When the ALPS +descriptor.type+ value is 'semantic', the +descriptor.name+
@@ -104,7 +104,7 @@ sub-entity, or the 'name' of an action 'field'.
 
 When the ALPS +descriptor.type+ value is 'safe', 'idempotent', or 'unsafe', the
 +descriptor.name+ value maps to either a Siren 'action' name or an item in the
-'rel' value array for a 'link' or 'sub-entity'.  If no match is found, an
+'rel' value array for a 'link' or 'sub-entity'. If no match is found, an
 attempt should be made to map the +descriptor.name+ value to the 'title' value
 of an 'action', 'link' or 'sub-entity'.
 

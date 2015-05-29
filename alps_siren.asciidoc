@@ -5,6 +5,12 @@ ALPS Mapping Guidelines for Siren
 :revdate: May 28, 2015
 
 == Summary
+[NOTE]
+========
+This is still a work in progress.  To file issues, please visit the GitHub
+repository:  https://github.com/kevinswiber/siren-alps-mapping
+========
+
 This document provides guidance on mapping ALPS descriptions to Siren
 representations.  It is provided as a guide for those writing servers that will
 use ALPS provides to generate Siren and for those writing client applications

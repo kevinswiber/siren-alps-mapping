@@ -759,7 +759,7 @@ repository:  <a href="https://github.com/kevinswiber/siren-alps-mapping">https:/
 </div>
 <div class="paragraph"><p>This document provides guidance on mapping ALPS descriptions to Siren
 representations.  It is provided as a guide for those writing servers that will
-use ALPS provides to generate Siren and for those writing client applications
+use ALPS profiles to generate Siren and for those writing client applications
 that will use ALPS profiles to "recognize" ALPS descriptors within the Siren
 representation.</p></div>
 </div>
@@ -767,7 +767,7 @@ representation.</p></div>
 <div class="sect1">
 <h2 id="_a_review_of_alps_principles">A Review of ALPS Principles</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>The Application-Level Profile Semantic(ALPS)<a href="#0">[0]</a> specification is designed
+<div class="paragraph"><p>The Application-Level Profile Semantic (ALPS)<a href="#0">[0]</a> specification is designed
 to describe the data elements and state transitions that make up a <em>problem
 domain</em> (e.g. microblogging, accounting, etc.). ALPS documents are designed to
 be useful to both client and server implementors and can be used at both
@@ -859,7 +859,7 @@ valid Siren representations.</p></div>
 <div class="sect3">
 <h4 id="_server_implementations">Server implementations</h4>
 <div class="paragraph"><p>When mapping Siren representations to ALPS, the <code>descriptor.id</code> value MUST be
-unique for each ALPS document.  It is RECOMMENDED to avoid using link
+unique for each ALPS document. It is RECOMMENDED to avoid using link
 relation values as <code>descriptor.id</code> values, as link relations may occur multiple
 times within a single Siren representation.</p></div>
 </div>
@@ -867,7 +867,7 @@ times within a single Siren representation.</p></div>
 <h4 id="_client_implementations">Client implementations</h4>
 <div class="paragraph"><p>When mapping ALPS to Siren representations, the <code>descriptor.id</code> property MUST
 be used in place of a <code>descriptor.name</code> value when a <code>descriptor.name</code> value is
-not present.  Otherwise, the <code>descriptor.id</code> value SHOULD be ignored.</p></div>
+not present. Otherwise, the <code>descriptor.id</code> value SHOULD be ignored.</p></div>
 </div>
 </div>
 <div class="sect2">
@@ -878,7 +878,7 @@ sub-entity, or the <em>name</em> of an action <em>field</em>.</p></div>
 <div class="paragraph"><p><em>TK: How does one distinguish between what is a property and what is a class?</em></p></div>
 <div class="paragraph"><p>When the ALPS <code>descriptor.type</code> value is <em>safe</em>, <em>idempotent</em>, or <em>unsafe</em>, the
 <code>descriptor.name</code> value maps to either a Siren <em>action</em> name or an item in the
-<em>rel</em> value array for a <em>link</em> or <em>sub-entity</em>.  If no match is found, an
+<em>rel</em> value array for a <em>link</em> or <em>sub-entity</em>. If no match is found, an
 attempt should be made to map the <code>descriptor.name</code> value to the <em>title</em> value
 of an <em>action</em>, <em>link</em> or <em>sub-entity</em>.</p></div>
 </div>
@@ -1127,7 +1127,7 @@ server’s use cases.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-05-28 22:20:52 EDT
+Last updated 2015-05-29 10:49:41 EDT
 </div>
 </div>
 </body>

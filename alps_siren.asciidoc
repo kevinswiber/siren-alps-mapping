@@ -20,7 +20,13 @@ run-time and design-time to handle the generation and interpretation of
 response representations. ALPS description documents are referred to as
 'profiles' or 'profile documents'.
 
-Since the aim is to support a wide set of use cases (clients, servers, run-time, design-time, etc.), ALPS profiles do not describe the runtime 'behavior' of any single system. Instead ALPS profiles describe the problem domain boundaries (e.g. the possible data elements and possible state transitions). It is up to implementors to decide how they wish to use ALPS profliesin order to create an actual instance of a service or client application.
+Since the aim is to support a wide set of use cases (clients, servers,
+run-time, design-time, etc.), ALPS profiles do not describe the runtime
+'behavior' of any single system. Instead ALPS profiles describe the problem
+domain boundaries (e.g. the possible data elements and possible state
+transitions). It is up to implementors to decide how they wish to use ALPS
+profiles in order to create an actual instance of a service or client
+application.
 
 === Servers and Clients
 For server implementors, ALPS profiles establish the list of possible
@@ -38,13 +44,18 @@ microblogging profile SHOULD be able to recognize all the important data
 elements and state transitions emitted by that service.
 
 == Advertising ALPS Profiles for Siren Representations
-Servers returning Siren responses can advertise the ALPS profiles they support using the following methods:
+Servers returning Siren responses can advertise the ALPS profiles they support
+using the following methods:
 
 Link Header::
-  Responses can include the +Link+ header<<1,[1]>> with the +href+ value set to the URL of the ALPS profile document and the +rel+ value set to "profile."+++<br>+++
+  Responses can include the +Link+ header<<1,[1]>> with the +href+ value set to
+  the URL of the ALPS profile document and the +rel+ value set to "profile."
+  +++<br>+++
   +Link: <http://alps.io/profiles/microblogging>; rel="profile"+
 Siren +link+ item::
-  Siren representations can use an item in the +links+ array<<2,[2]>> with the +href+ value set to the URL of the ALPS profile document and the +rel+ value set to "profile."+++<br>+++
+  Siren representations can use an item in the +links+ array<<2,[2]>> with the
+  +href+ value set to the URL of the ALPS profile document and the +rel+ value
+  set to "profile."+++<br>+++
   +{ "rel": ["profile"], "href": "http://alps.io/profiles/microblogging" }+
 
 [NOTE]
@@ -87,9 +98,9 @@ sub-entity, or the 'name' of an action 'field'.
 
 When the ALPS +descriptor.type+ value is 'safe', 'idempotent', or 'unsafe', the
 +descriptor.name+ value maps to either a Siren 'action' name or an item in the
-'rel' value array for a 'link' or 'sub-entity'.  If no match is found, an attempt
-should be made to map the +descriptor.name+ value to the 'title' value of an
-'action', 'link' or 'sub-entity'.
+'rel' value array for a 'link' or 'sub-entity'.  If no match is found, an
+attempt should be made to map the +descriptor.name+ value to the 'title' value
+of an 'action', 'link' or 'sub-entity'.
 
 === Mapping HTTP methods to ALPS +descriptor.type+ values
 HTTP methods will be used for requesting state or executing transitions.

@@ -142,8 +142,9 @@ ALPS profile to a Siren representation is rather straightforward.
 ----
 <alps>
   <link rel="self" href="http://alps.io/profiles/search" />
-  <descriptor id="text" type="semantic" />
-  <descriptor id="search" type="safe" />
+  <descriptor id="search" type="safe" >
+    <descriptor id="text" type="semantic" />
+  </descriptor>
 </alps>
 ----
 
